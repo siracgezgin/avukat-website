@@ -1,15 +1,28 @@
 import Link from "next/link";
 import { client } from "@/lib/sanity";
 import { PRACTICE_AREAS_QUERY } from "@/lib/queries";
+import { Scale, Gavel, FileText, Users, Building2, Home, Briefcase, Shield, BookOpen, LucideIcon } from 'lucide-react';
 
 interface PracticeArea {
   _id: string;
   title: string;
   slug: string;
-  icon: string;
+  iconName: string;
   shortDescription: string;
   order: number;
 }
+
+const iconMap: Record<string, LucideIcon> = {
+  Scale,
+  Gavel,
+  FileText,
+  Users,
+  Building2,
+  Home,
+  Briefcase,
+  Shield,
+  BookOpen,
+};
 
 async function getPracticeAreas(): Promise<PracticeArea[]> {
   return client.fetch(PRACTICE_AREAS_QUERY);
@@ -37,7 +50,12 @@ export default async function ServicesGrid() {
                 href={`/hizmetler/${area.slug}`}
                 className="group relative bg-law-light rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="text-5xl mb-4">{area.icon}</div>
+                <div className="mb-4">
+                  {(() => {
+                    const IconComponent = iconMap[area.iconName] || Scale;
+                    return <IconComponent className="w-12 h-12 text-law-gold" />;
+                  })()}
+                </div>
                 <h3 className="text-xl font-semibold text-law-navy mb-3 group-hover:text-law-gold transition-colors">
                   {area.title}
                 </h3>

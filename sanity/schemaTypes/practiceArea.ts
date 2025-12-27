@@ -22,11 +22,24 @@ export const practiceAreaType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'icon',
-      title: 'İkon (Emoji)',
+      name: 'iconName',
+      title: 'İkon Adı',
       type: 'string',
-      description: 'Örn: ⚖️, 🏢, 👨‍👩‍👧‍👦',
-      validation: (rule) => rule.required(),
+      description: 'Lucide icon adı seçin',
+      options: {
+        list: [
+          { title: 'Terazi (Scale)', value: 'Scale' },
+          { title: 'Çekiç (Gavel)', value: 'Gavel' },
+          { title: 'Dosya (FileText)', value: 'FileText' },
+          { title: 'İnsanlar (Users)', value: 'Users' },
+          { title: 'Bina (Building2)', value: 'Building2' },
+          { title: 'Ev (Home)', value: 'Home' },
+          { title: 'Çanta (Briefcase)', value: 'Briefcase' },
+          { title: 'Kalkan (Shield)', value: 'Shield' },
+          { title: 'Kitap (BookOpen)', value: 'BookOpen' },
+        ]
+      },
+      validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: 'shortDescription',
@@ -52,12 +65,12 @@ export const practiceAreaType = defineType({
   preview: {
     select: {
       title: 'title',
-      icon: 'icon',
+      iconName: 'iconName',
       order: 'order',
     },
-    prepare({title, icon, order}) {
+    prepare({title, iconName, order}) {
       return {
-        title: `${icon} ${title}`,
+        title: `${iconName} - ${title}`,
         subtitle: `Sıra: ${order}`,
       }
     },
