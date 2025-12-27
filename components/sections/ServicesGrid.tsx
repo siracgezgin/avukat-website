@@ -1,11 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import { client } from "@/lib/sanity";
 import { PRACTICE_AREAS_QUERY } from "@/lib/queries";
 import { Scale, Gavel, FileText, Users, Building2, Home, Briefcase, Shield, BookOpen, LucideIcon } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { use } from 'react';
 
 interface PracticeArea {
   _id: string;
@@ -32,23 +28,8 @@ async function getPracticeAreas(): Promise<PracticeArea[]> {
   return client.fetch(PRACTICE_AREAS_QUERY);
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
-export default function ServicesGrid() {
-  const areas = use(getPracticeAreas());
+export default async function ServicesGrid() {
+  const areas = await getPracticeAreas();
 
   return (
     <section className="bg-white py-24 sm:py-32">
@@ -62,24 +43,13 @@ export default function ServicesGrid() {
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-7xl">
-          <motion.div
-            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {areas.map((area) => (
-              <motion.div
+              <Link
                 key={area._id}
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                href={`/hizmetler/${area.slug}`}
+                className="group relative bg-law-light rounded-2xl p-8 shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-300 block"
               >
-                <Link
-                  href={`/hizmetler/${area.slug}`}
-                  className="group relative bg-law-light rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 block"
-                >
                 <div className="mb-4">
                   {(() => {
                     const IconComponent = iconMap[area.iconName] || Scale;
@@ -108,10 +78,8 @@ export default function ServicesGrid() {
                     />
                   </svg>
                 </span>
-                </Link>
-              </motion.div>
+              </Link>
             ))}
-          </motion.div>
         </div>
       </div>
     </section>

@@ -1,10 +1,6 @@
-"use client";
-
 import { client } from "@/lib/sanity";
 import { TESTIMONIALS_QUERY } from "@/lib/queries";
 import { Star } from "lucide-react";
-import { motion } from "framer-motion";
-import { use } from "react";
 
 interface Testimonial {
   _id: string;
@@ -19,23 +15,8 @@ async function getTestimonials(): Promise<Testimonial[]> {
   return client.fetch(TESTIMONIALS_QUERY);
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
-
-export default function Testimonials() {
-  const testimonials = use(getTestimonials());
+export default async function Testimonials() {
+  const testimonials = await getTestimonials();
 
   if (!testimonials || testimonials.length === 0) {
     return null; // Testimonial yoksa bölümü gösterme
@@ -53,17 +34,10 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <motion.div
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <motion.div
+            <div
               key={testimonial._id}
-              variants={itemVariants}
               className="bg-law-light rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow"
             >
               {/* Yıldızlar */}
@@ -94,9 +68,9 @@ export default function Testimonials() {
                   {testimonial.caseType}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
