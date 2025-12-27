@@ -1,4 +1,7 @@
+"use client";
+
 import { Gavel, ShieldCheck, Target } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function WhyUs() {
   const features = [
@@ -32,9 +35,13 @@ export default function WhyUs() {
         </div>
         <div className="mx-auto mt-16 max-w-7xl">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {features.map((feature) => (
-              <div
+            {features.map((feature, index) => (
+              <motion.div
                 key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
                 className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow"
               >
                 <div className="mb-4">
@@ -46,7 +53,7 @@ export default function WhyUs() {
                 <p className="text-law-gray">
                   {feature.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
