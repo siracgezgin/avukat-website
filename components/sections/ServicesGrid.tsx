@@ -80,6 +80,7 @@ export default async function ServicesGrid() {
                 </span>
               </Link>
             ))}
+          </div>
         </div>
       </div>
     </section>

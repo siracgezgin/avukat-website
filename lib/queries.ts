@@ -66,3 +66,11 @@ export const TESTIMONIALS_QUERY = `*[_type == "testimonial" && featured == true]
   rating,
   publishedAt
 }`
+
+export const FAQ_QUERY = `*[_type == "faq" && featured == true] | order(order asc) {
+  _id,
+  question,
+  answer,
+  category,
+  order
+}`
