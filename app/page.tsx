@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import Hero from "@/components/sections/Hero";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import WhyUs from "@/components/sections/WhyUs";
