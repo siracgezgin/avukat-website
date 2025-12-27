@@ -38,6 +38,16 @@ export const POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc) {
   publishedAt
 }`
 
+export const BLOG_POSTS_QUERY = `*[_type == "post"] | order(publishedAt desc) {
+  _id,
+  title,
+  slug,
+  publishedAt,
+  excerpt,
+  "author": author->name,
+  mainImage
+}`;
+
 export const POST_BY_SLUG_QUERY = `*[_type == "post" && slug.current == $slug][0] {
   _id,
   title,
@@ -45,5 +55,14 @@ export const POST_BY_SLUG_QUERY = `*[_type == "post" && slug.current == $slug][0
   excerpt,
   mainImage,
   body,
+  publishedAt
+}`
+
+export const TESTIMONIALS_QUERY = `*[_type == "testimonial" && featured == true] | order(publishedAt desc) [0...3] {
+  _id,
+  quote,
+  clientInitials,
+  caseType,
+  rating,
   publishedAt
 }`
