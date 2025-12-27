@@ -2,13 +2,15 @@ export function LegalServiceSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "Avukat",
-    "description": "Profesyonel hukuki danışmanlık ve avukatlık hizmetleri",
+    "name": "Av. Ömer Geçgelen",
+    "description": "Bursa'da profesyonel hukuki danışmanlık ve avukatlık hizmetleri. Bursa Barosu Sicil 6293",
     "url": "https://avukat.com",
-    "telephone": "+90-XXX-XXX-XX-XX",
+    "telephone": "+90-532-442-29-16",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "İstanbul",
+      "streetAddress": "Sakarya Mah. Ulubatlıhasan Bulvarı Göksoy İş Merkezi No:90 Kat:3",
+      "addressLocality": "Osmangazi",
+      "addressRegion": "Bursa",
       "addressCountry": "TR"
     },
     "priceRange": "$$",
@@ -32,7 +34,7 @@ export function AttorneySchema({ name, title, email }: { name: string; title: st
     "email": email,
     "worksFor": {
       "@type": "LegalService",
-      "name": "Avukat"
+      "name": "Av. Ömer Geçgelen"
     }
   };
 
@@ -86,8 +88,8 @@ export function BlogPostSchema({
     "image": image,
     "url": url,
     "author": {
-      "@type": "Organization",
-      "name": "Avukat"
+      "@type": "Person",
+      "name": "Av. Ömer Geçgelen"
     }
   };
 

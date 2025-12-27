@@ -20,7 +20,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="text-2xl font-bold text-white font-[family-name:var(--font-playfair)]">
-              Avukat
+              Av. Ömer Geçgelen
             </span>
           </Link>
         </div>

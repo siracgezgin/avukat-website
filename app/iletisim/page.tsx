@@ -54,25 +54,25 @@ export default function IletisimPage() {
                 <span className="text-2xl mr-4">📍</span>
                 <div>
                   <h3 className="font-semibold text-law-navy">Adres</h3>
-                  <p className="text-law-gray">İstanbul, Türkiye</p>
+                  <p className="text-law-gray">Sakarya Mah. Ulubatlıhasan Bulvarı</p>
+                  <p className="text-law-gray">Göksoy İş Merkezi No:90 Kat:3</p>
+                  <p className="text-law-gray">Osmangazi / Bursa</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <span className="text-2xl mr-4">📞</span>
                 <div>
                   <h3 className="font-semibold text-law-navy">Telefon</h3>
-                  <a href="tel:+905XXXXXXXXX" className="text-law-gold hover:underline">
-                    +90 (XXX) XXX XX XX
+                  <a href="tel:+905324422916" className="text-law-gold hover:underline">
+                    0 (532) 442 29 16
                   </a>
                 </div>
               </div>
               <div className="flex items-start">
-                <span className="text-2xl mr-4">✉️</span>
+                <span className="text-2xl mr-4">⚖️</span>
                 <div>
-                  <h3 className="font-semibold text-law-navy">Email</h3>
-                  <a href="mailto:info@avukat.com" className="text-law-gold hover:underline">
-                    info@avukat.com
-                  </a>
+                  <h3 className="font-semibold text-law-navy">Baro Sicil</h3>
+                  <p className="text-law-gray">Bursa Barosu Sicil: 6293</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -152,7 +152,7 @@ export default function IletisimPage() {
 
               {status === "error" && (
                 <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-                  Bir hata oluştu. Lütfen telefon ile arayın: +90 (XXX) XXX XX XX
+                  Bir hata oluştu. Lütfen telefon ile arayın: 0 (532) 442 29 16
                 </div>
               )}
 

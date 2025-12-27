@@ -18,22 +18,22 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Avukat | Hukuki Danışmanlık",
-  description: "Profesyonel hukuki danışmanlık ve avukatlık hizmetleri",
-  keywords: ["avukat", "hukuk", "hukuki danışmanlık", "İstanbul avukat", "ceza avukatı", "ticaret hukuku"],
-  authors: [{ name: "Avukat" }],
+  title: "Av. Ömer Geçgelen | Bursa Avukat",
+  description: "Bursa'da profesyonel hukuki danışmanlık ve avukatlık hizmetleri. Bursa Barosu Sicil 6293",
+  keywords: ["avukat", "bursa avukat", "ömer geçgelen", "hukuk", "hukuki danışmanlık", "bursa barosu", "osmangazi avukat"],
+  authors: [{ name: "Av. Ömer Geçgelen" }],
   openGraph: {
     type: "website",
     locale: "tr_TR",
     url: "https://avukat.com",
-    siteName: "Avukat",
-    title: "Avukat | Hukuki Danışmanlık",
-    description: "Profesyonel hukuki danışmanlık ve avukatlık hizmetleri",
+    siteName: "Av. Ömer Geçgelen",
+    title: "Av. Ömer Geçgelen | Bursa Avukat",
+    description: "Bursa'da profesyonel hukuki danışmanlık ve avukatlık hizmetleri",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Avukat | Hukuki Danışmanlık",
-    description: "Profesyonel hukuki danışmanlık ve avukatlık hizmetleri",
+    title: "Av. Ömer Geçgelen | Bursa Avukat",
+    description: "Bursa'da profesyonel hukuki danışmanlık ve avukatlık hizmetleri",
   },
 };
 

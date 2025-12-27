@@ -10,9 +10,11 @@ export default function Footer() {
               İletişim Bilgileri
             </h3>
             <div className="space-y-2 text-sm text-gray-300">
-              <p>📍 Adres: İstanbul, Türkiye</p>
-              <p>📞 Telefon: +90 (XXX) XXX XX XX</p>
-              <p>✉️ Email: info@avukat.com</p>
+              <p>📍 Sakarya Mah. Ulubatlıhasan Bulvarı</p>
+              <p className="ml-5">Göksoy İş Merkezi No:90 Kat:3</p>
+              <p className="ml-5">Osmangazi / Bursa</p>
+              <p>📞 Telefon: 0 (532) 442 29 16</p>
+              <p>⚖️ Bursa Barosu Sicil: 6293</p>
             </div>
           </div>
 
@@ -57,7 +59,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t border-white/10 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Avukat. Tüm hakları saklıdır.</p>
+          <p>&copy; {new Date().getFullYear()} Av. Ömer Geçgelen. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </footer>
