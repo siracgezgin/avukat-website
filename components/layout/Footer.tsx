@@ -19,28 +19,31 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4 font-[family-name:var(--font-playfair)]">
-              Hızlı Linkler
-            </h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-lg font-semibold mb-4">Hızlı Linkler</h3>
+            <ul className="space-y-2">
               <li>
-                <Link href="/hakkimizda" className="text-gray-300 hover:text-law-gold transition-colors">
+                <Link href="/hakkimizda" className="hover:text-law-gold transition-colors">
                   Hakkımızda
                 </Link>
               </li>
               <li>
-                <Link href="/hizmetler" className="text-gray-300 hover:text-law-gold transition-colors">
-                  Hizmetler
+                <Link href="/hizmetler" className="hover:text-law-gold transition-colors">
+                  Hizmetlerimiz
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-300 hover:text-law-gold transition-colors">
+                <Link href="/blog" className="hover:text-law-gold transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/iletisim" className="text-gray-300 hover:text-law-gold transition-colors">
+                <Link href="/iletisim" className="hover:text-law-gold transition-colors">
                   İletişim
+                </Link>
+              </li>
+              <li>
+                <Link href="/gizlilik-politikasi" className="hover:text-law-gold transition-colors">
+                  Gizlilik Politikası
                 </Link>
               </li>
             </ul>

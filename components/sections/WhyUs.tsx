@@ -1,17 +1,19 @@
+import { Gavel, ShieldCheck, Target } from 'lucide-react';
+
 export default function WhyUs() {
   const features = [
     {
-      emoji: "⚖️",
+      icon: <Gavel className="w-12 h-12 text-law-gold" />,
       title: "15 Yıl Tecrübe",
       description: "Binlerce davada kazanılmış tecrübe ve uzmanlık"
     },
     {
-      emoji: "🤝",
+      icon: <ShieldCheck className="w-12 h-12 text-law-gold" />,
       title: "Müvekkil Odaklı",
       description: "Her dosya bizim için özeldir, kişiselleştirilmiş hizmet"
     },
     {
-      emoji: "🎯",
+      icon: <Target className="w-12 h-12 text-law-gold" />,
       title: "Hızlı Çözüm",
       description: "Etkili strateji ve hızlı sonuç odaklı yaklaşım"
     }
@@ -35,7 +37,9 @@ export default function WhyUs() {
                 key={feature.title}
                 className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow"
               >
-                <div className="text-5xl mb-4">{feature.emoji}</div>
+                <div className="mb-4">
+                  {feature.icon}
+                </div>
                 <h3 className="text-xl font-semibold text-law-navy mb-2">
                   {feature.title}
                 </h3>

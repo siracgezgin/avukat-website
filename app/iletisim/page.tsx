@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export default function IletisimPage() {
@@ -10,10 +11,19 @@ export default function IletisimPage() {
     phone: "",
     message: "",
   });
+  const [kvkkAccepted, setKvkkAccepted] = useState(false);
+  const [kvkkError, setKvkkError] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!kvkkAccepted) {
+      setKvkkError(true);
+      return;
+    }
+    
+    setKvkkError(false);
     setStatus("loading");
 
     try {
@@ -26,6 +36,7 @@ export default function IletisimPage() {
       if (res.ok) {
         setStatus("success");
         setFormData({ name: "", email: "", phone: "", message: "" });
+        setKvkkAccepted(false);
       } else {
         setStatus("error");
       }
@@ -142,6 +153,37 @@ export default function IletisimPage() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-law-gold focus:border-transparent"
                 />
+              </div>
+
+              {/* KVKK Checkbox */}
+              <div className="space-y-2">
+                <div className="flex items-start">
+                  <input
+                    type="checkbox"
+                    id="kvkk"
+                    checked={kvkkAccepted}
+                    onChange={(e) => {
+                      setKvkkAccepted(e.target.checked);
+                      if (e.target.checked) setKvkkError(false);
+                    }}
+                    className="mt-1 h-4 w-4 text-law-gold focus:ring-law-gold border-gray-300 rounded"
+                  />
+                  <label htmlFor="kvkk" className="ml-3 text-sm text-law-gray">
+                    <Link 
+                      href="/gizlilik-politikasi" 
+                      target="_blank"
+                      className="text-law-gold hover:text-law-navy underline font-semibold"
+                    >
+                      Gizlilik Politikası ve KVKK Aydınlatma Metni
+                    </Link>
+                    'ni okudum ve kabul ediyorum. *
+                  </label>
+                </div>
+                {kvkkError && (
+                  <p className="text-red-600 text-sm ml-7">
+                    Devam etmek için gizlilik politikasını kabul etmelisiniz.
+                  </p>
+                )}
               </div>
 
               {status === "success" && (
