@@ -23,9 +23,9 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="Av. Ömer Geçgelen"
-              width={240}
-              height={80}
-              className="h-14 md:h-16 w-auto"
+              width={300}
+              height={100}
+              className="h-16 md:h-20 lg:h-24 w-auto"
               priority
             />
           </Link>
