@@ -20,7 +20,7 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl md:text-3xl font-bold text-white font-[family-name:var(--font-playfair)]">
+            <span className="text-2xl md:text-3xl font-bold text-white italic font-[family-name:var(--font-playfair)]">
               Av. Ömer Geçgelen
             </span>
           </Link>
