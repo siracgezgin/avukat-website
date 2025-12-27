@@ -18,8 +18,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-law-navy shadow-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl font-bold text-white font-[family-name:var(--font-playfair)]">
+          <Link href="/" className="-m-1.5 p-1.5 flex items-center">
+            <span className="text-xl md:text-2xl font-bold text-white font-[family-name:var(--font-playfair)]">
               Av. Ömer Geçgelen
             </span>
           </Link>
