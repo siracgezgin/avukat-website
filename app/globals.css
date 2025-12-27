@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  
+  --law-navy: #0f172a;
+  --law-gold: #d97706;
+  --law-gray: #475569;
+  --law-light: #f8fafc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-law-navy: var(--law-navy);
+  --color-law-gold: var(--law-gold);
+  --color-law-gray: var(--law-gray);
+  --color-law-light: var(--law-light);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+}
